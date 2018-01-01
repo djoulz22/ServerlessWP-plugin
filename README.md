@@ -1,0 +1,1 @@
+# ServerlessWP-plugin
