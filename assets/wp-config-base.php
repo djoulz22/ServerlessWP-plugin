@@ -83,7 +83,9 @@ define( 'WPOS3_SETTINGS', serialize( array(
 	// Rewrite file URLs to S3
 	'serve-from-s3' => true,
 	// S3 URL format to use ('path', 'cloudfront')
-	'domain' => 'path',
+	'domain' => 'cloudfront',
+	// Custom domain if 'domain' set to 'cloudfront'
+	'cloudfront' => getenv('WP_CF_DOMAIN'),
 	// Enable object prefix, useful if you use your bucket for other files
 	'enable-object-prefix' => true,
 	// Object prefix to use if 'enable-object-prefix' is 'true'
