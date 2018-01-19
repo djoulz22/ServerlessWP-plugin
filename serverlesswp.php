@@ -36,3 +36,18 @@ function serverlesswp_filter_aws_args($args) {
 	}
 	return $args;
 }
+
+add_action('admin_bar_menu', 'serverlesswp_admin_menu', 100);
+
+function serverlesswp_admin_menu($admin_bar) {
+	$args = array(
+		'id'    => 'serverlesswp-crawl',
+		'title' => '<span class="ab-icon dashicons dashicons-media-code"></span>' . _( 'Launch ServerlessWP Static Update' ),
+		'href'  => get_site_url( null, 'serverlesswp-crawl'),
+		'meta'  => array(
+			'title' => __( 'Launch ServerlessWP Static Update' ),
+			'target' => '_blank',
+		),
+	);
+	$admin_bar->add_node( $args );
+}
