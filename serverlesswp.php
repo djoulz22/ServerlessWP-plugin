@@ -32,6 +32,10 @@ add_filter( 'aws_get_client_args', 'serverlesswp_filter_aws_args' );
 
 function serverlesswp_filter_aws_args($args) {
 	if (defined('AWS_SESSION_TOKEN')) {
+		/* 
+		 * For Role Usage 
+		 */
+		$args["credentials"]['token'] = AWS_SESSION_TOKEN;
 		$args['token'] = AWS_SESSION_TOKEN;
 	}
 	return $args;
